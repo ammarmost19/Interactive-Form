@@ -60,4 +60,4 @@ The project is currently under development. More improvements and documentation 
 Front-End Developer | Data Engineer
 
 - GitHub: [@ammarmost19](https://github.com/ammarmost19)
-- LinkedIn: [Ammar Mostafa](www.linkedin.com/in/ammar-mostafa-mohammed)
+- LinkedIn: [Ammar Mostafa](https://www.linkedin.com/in/ammar-mostafa-mohammed)
