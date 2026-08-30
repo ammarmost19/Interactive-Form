@@ -21,7 +21,7 @@ main{
   background-color: #FFFFFF;
   padding:1.5rem;
   width: calc(100% - 2rem);
-  max-width: 500px;
+  max-width: 450px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
@@ -129,10 +129,14 @@ input::placeholder {
   right: 10px;
   cursor: pointer;
 }
-hr{
+.pass-checker{
+  display:flex;
+  gap:5px;
+}
+.pass-checker div{
   background-color: #E0E3E5;
-  height: 4px;
-  border: none;
+  width: 25%;
+  height: 5px;
   border-radius: 50px;
 }
 .privacy-policy{
@@ -178,3 +182,4 @@ hr{
   text-decoration: none;
   color: black;
 }
+
