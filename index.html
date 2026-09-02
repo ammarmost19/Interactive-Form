@@ -30,43 +30,59 @@
                 <p class="sub-title">Join thousands of professionals today.</p>
             </div>
             <div class="signup-body">
-                <label for="full-name">Full Name</label>
-                <div class="full-name-input input-wrapper">
-                    <input type="text" id="full-name" placeholder="John Doe">
-                </div>
-    
-                <label for="email">Email Address</label>
-                <div class="email-input input-wrapper">
-                    <input type="email" id="email"  placeholder="name@company.com">
-                </div>
-    
-                <label for="number">Phone Number</label>
-                <div class="phone-input input-wrapper">
-                    <input type="tel" id="number" placeholder="+1 (555) 000-0000">
-                </div>
-    
-                <label for="password">Password</label>
-                <div class="password-input input-wrapper">
-                    <input type="password" id="password" placeholder="••••••••">
-                </div>
-                <div class="pass-checker">
-                    <div class="weak"></div>
-                    <div class="medium"></div>
-                    <div class="strong"></div>
-                    <p data-status='["Weak", "Medium", "Strong"]'></p>
-                </div>
-                <div class="privacy-policy">
-                    <input type="checkbox">
-                    <p>I agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy.</a></p>
-                </div>
-                <div class="signup-button">
-                    <button type="submit">Create Account <img src="./assets/arrow-Icon.svg" alt="arrow icon"></button>
-                </div>
+                <form id="form">
+                    <label for="full-name">Full Name</label>
+                    <div class="full-name-input input-wrapper">
+                        <input type="text" id="full-name" placeholder="John Doe" >
+                        <p class="errormsg name-err" ></p>
+                    </div>
+        
+                    <label for="email">Email Address</label>
+                    <div class="email-input input-wrapper">
+                        <input type="email" id="email"  placeholder="name@company.com">
+                        <p class="errormsg email-err" ></p>
+                    </div>
+        
+                    <label for="number">Phone Number</label>
+                    <div class="phone-input input-wrapper">
+                        <input type="tel" id="number" placeholder="+1 (555) 000-0000">
+                        <p class="errormsg number-err" ></p>
+                    </div>
+        
+                    <label for="password">Password</label>
+                    <div class="password-input input-wrapper">
+                        <input type="password" id="password" placeholder="••••••••">
+                        <p class="errormsg password-err" ></p>
+                        <span><img src="./assets/hide-pass-icon.svg" alt="hide password"></span>
+                    </div>
+                    <div class="pass-checker">
+                        <div class="pass-status"></div>
+                        <div class="pass-status"></div>
+                        <div class="pass-status"></div>
+                        <p class="pass-status-data" ></p>
+                    </div>
+                    <div class="pass-condition-cnt">
+                        <p class="pass-condition"><img src="./assets/wrong-icon.svg">At least 8 characters</p>
+                        <p class="pass-condition"><img src="./assets/wrong-icon.svg">One uppercase letter</p>
+                        <p class="pass-condition"><img src="./assets/wrong-icon.svg">One lowercase letter</p>
+                        <p class="pass-condition"><img src="./assets/wrong-icon.svg">One number</p>
+                        <p class="pass-condition"><img src="./assets/wrong-icon.svg">One special character</p>
+                    </div>
+                    <div class="privacy-policy">
+                        <input type="checkbox">
+                        <p>I agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy.</a></p>
+                    </div>
+                    <div class="signup-button">
+                        <button type="submit">Create Account <img src="./assets/arrow-Icon.svg" alt="arrow icon"></button>
+                        <p class="submit-error"></p>
+                    </div>
+                </form>
                 <div class="login-phrase">
                     <p>Already have an account? <a href="/">Log in</a></p>
                 </div>
             </div>
         </div>
     </main>
+    <script src="./index.js"></script>
 </body>
 </html>
