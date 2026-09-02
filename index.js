@@ -4,6 +4,9 @@ let passAllValid = false;
 let nameValid = false;  
 let emailValid = false;
 let phoneValid = false;
+let privacyValid = false;
+let  errorMsg = document.querySelectorAll(".errormsg");
+
 
 
 inputs.forEach((input)=>{
@@ -93,6 +96,14 @@ inputs.forEach((input)=>{
                 passStatusData.classList.remove("medium-data");
             }
         }
+        if(input.id === "privacy-policy"){
+            if(input.checked){
+                privacyValid = true;
+            }else{
+                privacyValid = false;
+            }
+            
+        }
     })
     input.addEventListener('focus',(e)=>{   
         e.target.classList.add("input-focus-dcr");
@@ -116,8 +127,7 @@ inputs.forEach((input)=>{
                 nameValid = false;
             }else{
                 nameValid = true;
-                let errorSolved = e.target.parentElement.querySelector(".errormsg");
-                errorSolved.textContent= "";
+                errorMsg[0].textContent= "";
                 e.target.classList.remove("input-error-dcr");
             }
         }
@@ -136,8 +146,7 @@ inputs.forEach((input)=>{
             }
             else{
                 emailValid = true;
-                let errorSolved = e.target.parentElement.querySelector(".errormsg");
-                errorSolved.textContent= "";
+                errorMsg[1].textContent= "";
                 e.target.classList.remove("input-error-dcr");
             }
         }
@@ -158,8 +167,7 @@ inputs.forEach((input)=>{
             }
             else{
                 phoneValid = true;
-                let errorSolved = e.target.parentElement.querySelector(".errormsg");
-                errorSolved.textContent= "";
+                errorMsg[2].textContent= "";
                 e.target.classList.remove("input-error-dcr");
             }
         }
@@ -169,8 +177,8 @@ inputs.forEach((input)=>{
                 e.target.classList.add("input-error-dcr");
             }else{
                 e.target.classList.remove("input-error-dcr");
+                errorMsg[3].textContent= "";
             }
-            return;
         }
         
     })
@@ -195,13 +203,24 @@ showpass.addEventListener("click",(e)=>{
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault();
-    let allValid = passAllValid && nameValid && emailValid && phoneValid;
+    let allValid = passAllValid && nameValid && emailValid && phoneValid && privacyValid;
+    let submitErr = document.querySelector(".submit-error");
+    let validations = [nameValid, emailValid, phoneValid, passAllValid, privacyValid];
     if(!allValid){
-        let submitErr = document.querySelector(".submit-error");
-        console.log(submitErr);
+        for(let i = 0; i < validations.length; i++){
+            if(!validations[i]){
+                errorMsg[i].textContent ="this field is required";
+            }else{
+                errorMsg[i].textContent ="";
+            }
+        }
         submitErr.textContent="please fill all fields correctly!";
     }
     else{
+        for(let i = 0; i < validations.length; i++){
+            errorMsg[i].textContent ="";
+        }
+        submitErr.textContent="";
         window.location.href = "./success.html";
     }
 

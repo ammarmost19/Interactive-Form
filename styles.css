@@ -202,11 +202,11 @@ color:#F59E0B;
   color:#16A34A;
 }
 
-.privacy-policy{
+.privacy-policy-cnt{
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin: 1rem 0;
+  margin: 1rem 0 0.5rem 0;
 
 }
 .privacy-policy input{
@@ -217,9 +217,14 @@ color:#F59E0B;
   height: 15px;
 
 }
-.privacy-policy p{
+.privacy-policy-cnt p{
   color: #45464D;
 }
+
+.privacy-err{
+  color:red;
+}
+
 .privacy-policy a{
   text-decoration: none;
   color: #0058BE;
