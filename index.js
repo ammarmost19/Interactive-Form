@@ -205,6 +205,8 @@ form.addEventListener("submit",(e)=>{
     e.preventDefault();
     let allValid = passAllValid && nameValid && emailValid && phoneValid && privacyValid;
     let submitErr = document.querySelector(".submit-error");
+    let popupPage = document.querySelector(".popup-page");
+    let popupOpacity = document.querySelector("main")
     let validations = [nameValid, emailValid, phoneValid, passAllValid, privacyValid];
     if(!allValid){
         for(let i = 0; i < validations.length; i++){
@@ -216,13 +218,19 @@ form.addEventListener("submit",(e)=>{
         }
         submitErr.textContent="please fill all fields correctly!";
         popupPage.classList.add("remove-popup-page");
+        popupOpacity.classList.remove("popup-opacity");
     }
     else{
+        let popupButton = document.querySelector(".popup-button button");
         for(let i = 0; i < validations.length; i++){
             errorMsg[i].textContent ="";
         }
         submitErr.textContent="";
-        window.location.href = "./success.html";
+        popupPage.classList.remove("remove-popup-page");
+        popupOpacity.classList.add("popup-opacity");
+        popupButton.addEventListener("click" , ()=>{
+            window.location.reload();
+        })
     }
 
 })
