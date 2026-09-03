@@ -66,15 +66,6 @@ The interface uses a **mobile-first approach**:
 
 [Live Demo](https://ammarmost19.github.io/Interactive-Form/)
 
-## 🔮 Future Improvements
-
-- Connect the form to a real backend API
-- Add server-side validation
-- Implement real user authentication
-- Add password confirmation
-- Improve accessibility
-- Add loading and API error states
-
 ## 👨‍💻 Author
 
 **Ammar Mostafa**
