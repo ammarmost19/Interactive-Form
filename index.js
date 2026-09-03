@@ -196,13 +196,15 @@ showpass.addEventListener("click",(e)=>{
 form.addEventListener("submit",(e)=>{
     e.preventDefault();
     let allValid = passAllValid && nameValid && emailValid && phoneValid;
+    let popupPage = document.querySelector(".popup-page");
     if(!allValid){
         let submitErr = document.querySelector(".submit-error");
         console.log(submitErr);
         submitErr.textContent="please fill all fields correctly!";
+        popupPage.classList.add("remove-popup-page");
     }
     else{
-        window.location.href = "./success.html";
+        popupPage.classList.remove("remove-popup-page");
     }
 
 })
