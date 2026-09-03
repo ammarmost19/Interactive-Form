@@ -215,6 +215,7 @@ form.addEventListener("submit",(e)=>{
             }
         }
         submitErr.textContent="please fill all fields correctly!";
+        popupPage.classList.add("remove-popup-page");
     }
     else{
         for(let i = 0; i < validations.length; i++){
